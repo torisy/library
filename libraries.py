@@ -10,7 +10,7 @@ def generate_fake_data(num_entries=10):
         name = fake.name()  # Генерация случайного имени
         email = fake.email()  # Генерация случайного адреса электронной почты
         phone = fake.phone_number()  # Генерация случайного номера телефона
-        age = fake.random_int(min=18, max=90)  # Генерация случайного возраста
+        age = fake.random_int(min=12, max=70)  # Генерация случайного возраста
         data.append((name, email, phone, str(age)))  # Добавление кортежа в список данных
     return data
 
