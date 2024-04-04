@@ -2,6 +2,7 @@ from rich.console import Console
 from rich.table import Table
 from faker import Faker
 import plotly.graph_objs as go
+import json
 
 def generate_fake_data(num_entries=10):
     fake = Faker()  # Создание объекта Faker
@@ -36,9 +37,11 @@ def display_plot(data):
     fig.show()  # Отображение графика
 
 def main():
-    fake_data = generate_fake_data(num_entries=5)  # Генерация фальшивых данных
+    fake_data = generate_fake_data(num_entries=10)  # Генерация фальшивых данных
     display_table(fake_data)  # Вывод таблицы фальшивых данных
     display_plot(fake_data)  # Построение графика
+    with open("fake_data.json", "w") as file:
+        json.dump(fake_data, file, indent=4)
 
 if __name__ == "__main__":
     main()
